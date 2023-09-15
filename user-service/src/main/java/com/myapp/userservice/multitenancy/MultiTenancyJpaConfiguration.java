@@ -21,7 +21,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -37,9 +36,6 @@ public class MultiTenancyJpaConfiguration {
 
   @Autowired
   private JpaProperties jpaProperties;
-
-  @Autowired
-  private RestTemplate rs;
 
   @Autowired
   private TenantServiceClient client;
