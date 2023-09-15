@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package com.myapp.tenant.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.myapp.tenant.shared";
+
+service TenantService {
+
+  rpc createTenant(CreateTenantRequest) returns (TenantResponse) {
+
+  }
+
+  rpc getAllTenants(GetAllTenants) returns (GetAllTenantResponse) {
+
+  }
+}
+
+message CreateTenantRequest {
+  string email =1;
+  string orgName = 2;
+  string firstName = 3;
+  string lastName = 4;
+  string instanceName = 5;
+}
+
+message TenantResponse {
+  string message = 1;
+}
+
+message GetAllTenants {
+
+}
+
+message GetAllTenantResponse {
+  repeated DataSource dataSources= 1;
+}
+
+message DataSource {
+  int32 id = 1;
+  string tenantId = 2;
+  string url = 3;
+  string username = 4;
+  string password = 5;
+  string driverClassName = 6;
+}
