@@ -1,7 +1,6 @@
 package com.myapp.userservice.service;
 
 import com.myapp.userservice.client.TenantServiceClient;
-import com.myapp.userservice.dto.Dsource;
 import com.myapp.userservice.dto.TenantDto;
 import com.myapp.userservice.multitenancy.MultiTenancyJpaConfiguration;
 import com.myapp.userservice.multitenancy.TenantContextHolder;
@@ -9,7 +8,6 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
