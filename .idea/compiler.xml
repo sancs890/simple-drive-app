@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="shared" />
         <module name="tenant-service-grpc" />
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="tenant-service" options="-parameters" />
       <module name="tenant-service-grpc" options="-parameters" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>

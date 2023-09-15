@@ -11,6 +11,7 @@
   <modules>
     <module>shared</module>
     <module>tenant-service-grpc</module>
+    <module>user-service</module>
   </modules>
 
   <name>simple-drive-app</name>
