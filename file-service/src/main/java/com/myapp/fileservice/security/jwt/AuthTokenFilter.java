@@ -45,7 +45,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
       throws ServletException, IOException {
     try {
       String tenant = this.obtainTenantFromSubdomain(request);
-      String userId = request.getParameter("userId");
       if (!this.dataSourcesMtApp.containsKey(tenant)) {
         List<com.myapp.tenant.shared.DataSource> dataSourceList = this.client.getAllTenants();
         boolean flag = true;
@@ -71,6 +70,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
       String jwt = this.parseJwt(request);
       if (jwt != null && this.jwtUtils.validateJwtToken(jwt)) {
         String username = this.jwtUtils.getUserNameFromJwtToken(jwt);
+
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
             userDetails, null, userDetails.getAuthorities());
