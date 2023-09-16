@@ -191,7 +191,8 @@ public class FileUploadController {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
     if (userPrincipal.getId() != pathUserId) {
-      throw new Exception(String.format("The user Id mismatch from logged in {} and path param {}", userPrincipal.getId()
+      throw new Exception(String.format("The user Id mismatch from logged in %d and path param %d",
+                                        userPrincipal.getId()
           , pathUserId));
     }
   }
